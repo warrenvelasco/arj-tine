@@ -30,7 +30,7 @@ export default function Hero() {
         </p>
 
         <h1 className="mt-2 font-serif text-6xl font-medium tracking-wide text-ink sm:text-7xl lg:text-8xl">
-          {WEDDING.groom} <span className="text-blue-dust">&amp;</span>{" "}
+          {"Arjay"} <span className="text-blue-dust">&amp;</span>{" "}
           {WEDDING.bride}
         </h1>
 
@@ -41,11 +41,12 @@ export default function Hero() {
         </div>
 
         <div className="relative mt-10">
-          <div className="flex h-56 w-56 items-center justify-center overflow-hidden rounded-full bg-gray-300 ring-8 ring-cream sm:h-72 sm:w-72">
-            <span className="text-xs uppercase tracking-widest text-gray-500">
-              Photo
-            </span>
-          </div>
+          <div
+            className="bg-cover bg-bottom bg-no-repeat flex h-56 w-56 items-center justify-center overflow-hidden rounded-full bg-gray-300 ring-8 ring-cream sm:h-72 sm:w-72 border-8 border-white shadow-xl"
+            style={{
+              backgroundImage: `url(/images/coups.jpg)`,
+            }}
+          ></div>
         </div>
 
         <div className="mt-10">

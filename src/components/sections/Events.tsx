@@ -6,6 +6,7 @@ type EventInfo = {
   time: string;
   venue: string;
   address: string;
+  image: string;
 };
 
 const EVENTS: EventInfo[] = [
@@ -14,12 +15,14 @@ const EVENTS: EventInfo[] = [
     time: "1:00 PM",
     venue: "Our Lady of Peace and Good Voyage Parish",
     address: "Lodlod, Lipa City, Batangas",
+    image: "/images/church.webp",
   },
   {
     title: "The Reception",
     time: "3:00 PM",
     venue: "Hacienda Solange",
     address: "Malagonlong, Lipa City, Batangas",
+    image: "/images/event.webp",
   },
 ];
 
@@ -41,18 +44,17 @@ export default function Events() {
           {EVENTS.map((event) => (
             <article
               key={event.title}
-              className="overflow-hidden rounded-2xl bg-cream-deep shadow-[0_10px_40px_rgba(90,84,76,0.06)]"
+              className="overflow-hidden rounded-2xl bg-cream-deep shadow-2xl border-4 border-white"
             >
-              <div className="flex h-44 items-center justify-center bg-gray-300">
-                <span className="text-xs uppercase tracking-widest text-gray-500">
-                  Venue Photo
-                </span>
-              </div>
+              <div
+                className="bg-cover bg-center bg-no-repeat flex h-44 items-center justify-center bg-gray-300"
+                style={{ backgroundImage: `url(${event.image})` }}
+              ></div>
               <div className="p-8 text-center">
                 <h3 className="font-serif text-2xl font-medium text-ink">
                   {event.title}
                 </h3>
-                <p className="mt-3 text-sm uppercase tracking-[0.18em] text-blue-dust">
+                <p className="mt-3 text-lg uppercase tracking-[0.18em] text-blue-dust">
                   {event.time}
                 </p>
                 <p className="mt-4 font-serif text-lg text-ink">
