@@ -12,6 +12,7 @@ export const NAV_LINKS = [
   { id: "home", label: "Home" },
   { id: "couple", label: "Couple" },
   { id: "story", label: "Story" },
+  { id: "gallery", label: "Gallery" },
   { id: "rsvp", label: "RSVP" },
   { id: "events", label: "Events" },
 ] as const;

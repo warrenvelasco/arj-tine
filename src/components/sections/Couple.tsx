@@ -43,7 +43,7 @@ export default function Couple() {
               key={person.name}
               className="flex flex-col items-center rounded-2xl bg-cream p-8 text-center shadow-[0_10px_40px_rgba(90,84,76,0.06)]"
             >
-              <div className="flex h-40 w-40 items-center justify-center overflow-hidden rounded-full bg-gray-300 ring-4 ring-cream-deep">
+              <div className="flex h-48 w-56 items-center justify-center overflow-hidden rounded-2xl bg-gray-300 ring-4 ring-cream-deep">
                 <span className="text-xs uppercase tracking-widest text-gray-500">
                   Photo
                 </span>

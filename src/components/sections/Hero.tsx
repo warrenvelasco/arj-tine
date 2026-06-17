@@ -42,7 +42,7 @@ export default function Hero() {
 
         <div className="relative mt-10">
           <div
-            className="bg-cover bg-bottom bg-no-repeat flex h-56 w-56 items-center justify-center overflow-hidden rounded-full bg-gray-300 ring-8 ring-cream sm:h-72 sm:w-72 border-8 border-white shadow-xl"
+            className="bg-cover bg-top bg-no-repeat flex h-60 w-72 items-center justify-center overflow-hidden rounded-2xl bg-gray-300 ring-8 ring-cream sm:h-80 sm:w-104 border-8 border-white shadow-xl"
             style={{
               backgroundImage: `url(/images/coups.jpg)`,
             }}
