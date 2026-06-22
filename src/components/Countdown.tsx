@@ -20,7 +20,13 @@ function getTimeLeft(target: number): TimeLeft {
   };
 }
 
-export default function Countdown({ date }: { date: string }) {
+export default function Countdown({
+  date,
+  tone = "dark",
+}: {
+  date: string;
+  tone?: "dark" | "light";
+}) {
   const target = new Date(date).getTime();
   const [time, setTime] = useState<TimeLeft | null>(null);
 
@@ -37,14 +43,28 @@ export default function Countdown({ date }: { date: string }) {
     { label: "Secs", value: time?.seconds ?? 0 },
   ];
 
+  const isLight = tone === "light";
+
   return (
     <div className="flex items-start justify-center gap-4 sm:gap-8">
       {units.map((unit) => (
         <div key={unit.label} className="flex flex-col items-center">
-          <span className="font-serif text-4xl font-semibold text-ink tabular-nums sm:text-5xl">
+          <span
+            className={`font-serif text-4xl font-semibold tabular-nums sm:text-5xl ${
+              isLight
+                ? "text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]"
+                : "text-ink"
+            }`}
+          >
             {String(unit.value).padStart(2, "0")}
           </span>
-          <span className="mt-1 text-xs uppercase tracking-[0.2em] text-muted">
+          <span
+            className={`mt-1 text-xs uppercase tracking-[0.2em] ${
+              isLight
+                ? "text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]"
+                : "text-muted"
+            }`}
+          >
             {unit.label}
           </span>
         </div>

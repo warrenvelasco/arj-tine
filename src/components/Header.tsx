@@ -36,6 +36,8 @@ export default function Header() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const onHero = active === "home" && !scrolled;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -47,7 +49,9 @@ export default function Header() {
       <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-8">
         <button
           onClick={() => handleNav("home")}
-          className="font-script text-3xl leading-none text-sage-deep sm:text-4xl"
+          className={`font-script text-3xl leading-none sm:text-4xl ${
+            onHero ? "text-cream [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]" : "text-sage-deep"
+          }`}
           aria-label="Arj and Tine — back to top"
         >
           Arj <span className="text-blue-dust">+</span> Tine
@@ -59,7 +63,13 @@ export default function Header() {
               <button
                 onClick={() => handleNav(link.id)}
                 className={`text-sm font-medium uppercase tracking-[0.18em] transition-colors hover:text-sage-deep ${
-                  active === link.id ? "text-sage-deep" : "text-ink/80"
+                  active === link.id
+                    ? onHero
+                      ? "text-cream"
+                      : "text-sage-deep"
+                    : onHero
+                      ? "text-cream/85 hover:text-cream"
+                      : "text-ink/80"
                 }`}
               >
                 {link.label}
@@ -75,19 +85,19 @@ export default function Header() {
           onClick={() => setMenuOpen((o) => !o)}
         >
           <span
-            className={`h-0.5 w-6 bg-ink transition-transform ${
-              menuOpen ? "translate-y-2 rotate-45" : ""
-            }`}
+            className={`h-0.5 w-6 transition-transform ${
+              onHero ? "bg-cream" : "bg-ink"
+            } ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
           />
           <span
-            className={`h-0.5 w-6 bg-ink transition-opacity ${
-              menuOpen ? "opacity-0" : ""
-            }`}
+            className={`h-0.5 w-6 transition-opacity ${
+              onHero ? "bg-cream" : "bg-ink"
+            } ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`h-0.5 w-6 bg-ink transition-transform ${
-              menuOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
+            className={`h-0.5 w-6 transition-transform ${
+              onHero ? "bg-cream" : "bg-ink"
+            } ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
       </nav>
