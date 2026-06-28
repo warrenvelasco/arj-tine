@@ -37,10 +37,15 @@ type YTPlayerConfig = {
   events?: { onReady?: (e: { target: YTPlayer }) => void };
 };
 
+/** Fired (e.g. by the envelope intro) when the user has opted into sound. */
+const PLAY_AUDIO_EVENT = "wedding:play-audio";
+
 declare global {
   interface Window {
     YT?: { Player: new (el: HTMLElement, config: YTPlayerConfig) => YTPlayer };
     onYouTubeIframeAPIReady?: () => void;
+    /** Persists the "wants sound" intent across remounts (e.g. intro reveal). */
+    __weddingWantSound?: boolean;
   }
 }
 
@@ -85,6 +90,9 @@ export default function VideoBackground() {
 
   useEffect(() => {
     let cancelled = false;
+
+    // Restore the sound preference if it was already requested before a remount.
+    wantSoundRef.current = !!window.__weddingWantSound;
 
     const applySoundPreference = () => {
       const player = playerRef.current;
@@ -150,19 +158,18 @@ export default function VideoBackground() {
 
     initPlayer();
 
-    const onFirstGesture = () => {
+    // Sound only starts when explicitly requested (envelope intro, 3s after the
+    // seal is clicked), never on an arbitrary click anywhere on the page.
+    const onPlayAudio = () => {
+      window.__weddingWantSound = true;
       wantSoundRef.current = true;
       applySoundPreference();
-      document.removeEventListener("pointerdown", onFirstGesture);
-      document.removeEventListener("keydown", onFirstGesture);
     };
-    document.addEventListener("pointerdown", onFirstGesture);
-    document.addEventListener("keydown", onFirstGesture);
+    window.addEventListener(PLAY_AUDIO_EVENT, onPlayAudio);
 
     return () => {
       cancelled = true;
-      document.removeEventListener("pointerdown", onFirstGesture);
-      document.removeEventListener("keydown", onFirstGesture);
+      window.removeEventListener(PLAY_AUDIO_EVENT, onPlayAudio);
 
       const player = playerRef.current;
       if (player?.destroy) player.destroy();
@@ -174,14 +181,17 @@ export default function VideoBackground() {
     const player = playerRef.current;
     if (!player) {
       wantSoundRef.current = true;
+      window.__weddingWantSound = true;
       return;
     }
 
     if (muted) {
       wantSoundRef.current = true;
+      window.__weddingWantSound = true;
       if (unmutePlayer(player)) setMuted(false);
     } else {
       wantSoundRef.current = false;
+      window.__weddingWantSound = false;
       if (mutePlayer(player)) setMuted(true);
     }
   };

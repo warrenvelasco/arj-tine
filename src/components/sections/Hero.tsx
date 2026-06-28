@@ -12,7 +12,7 @@ export default function Hero() {
       <VideoBackground />
 
       <Image
-        src="/images/1.png"
+        src="/images/gold1.png"
         alt=""
         width={660}
         height={620}
@@ -20,7 +20,7 @@ export default function Hero() {
         className="pointer-events-none absolute -left-10 -top-6 z-10 w-44 select-none opacity-80 mix-blend-screen sm:w-72 lg:w-96"
       />
       <Image
-        src="/images/2.png"
+        src="/images/gold2.png"
         alt=""
         width={330}
         height={530}

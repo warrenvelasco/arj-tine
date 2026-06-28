@@ -59,14 +59,19 @@ export default function Rsvp() {
             <span className="font-medium text-sage-deep">August 15, 2026</span>.
           </p>
         </div>
-        <iframe
-          className="mt-8"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSf9SKUtZd6xX0B1P8kTBeVvzyemn3Bsu9ddsGGKvpAP_lYP2w/viewform?embedded=true"
-          width="640"
-          height="1200"
-        >
-          Loading…
-        </iframe>
+        {/* overflow-hidden clips the iframe's internal scrollbar, which we push
+            off the right edge by making the iframe wider than its container */}
+        <div className="mt-8 w-full overflow-hidden">
+          <iframe
+            title="RSVP form"
+            className="block w-[calc(100%+22px)] sm:mx-auto sm:w-[662px] max-sm:relative max-sm:-left-2"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSf9SKUtZd6xX0B1P8kTBeVvzyemn3Bsu9ddsGGKvpAP_lYP2w/viewform?embedded=true"
+            width="640"
+            height="1200"
+          >
+            Loading…
+          </iframe>
+        </div>
       </div>
     </section>
   );

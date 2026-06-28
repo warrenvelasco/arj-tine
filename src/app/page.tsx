@@ -6,6 +6,8 @@ import Story from "@/components/sections/Story";
 import Gallery from "@/components/sections/Gallery";
 import Rsvp from "@/components/sections/Rsvp";
 import Events from "@/components/sections/Events";
+import DressCode from "@/components/sections/DressCode";
+import Gifts from "@/components/sections/Gifts";
 import IntroGate from "@/components/intro/IntroGate";
 
 export default function Home() {
@@ -14,11 +16,13 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Couple />
+        {/* <Couple /> */}
         <Story />
         <Gallery />
         <Rsvp />
         <Events />
+        <DressCode />
+        <Gifts />
       </main>
       <Footer />
     </IntroGate>

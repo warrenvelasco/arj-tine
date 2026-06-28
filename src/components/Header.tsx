@@ -50,7 +50,9 @@ export default function Header() {
         <button
           onClick={() => handleNav("home")}
           className={`font-script text-3xl leading-none sm:text-4xl ${
-            onHero ? "text-cream [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]" : "text-sage-deep"
+            onHero
+              ? "text-cream [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]"
+              : "text-sage-deep"
           }`}
           aria-label="Arj and Tine — back to top"
         >
@@ -104,7 +106,7 @@ export default function Header() {
 
       <div
         className={`overflow-hidden border-t border-sage/15 bg-cream/98 backdrop-blur transition-[max-height] duration-300 md:hidden ${
-          menuOpen ? "max-h-80" : "max-h-0"
+          menuOpen ? "max-h-92" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col px-5 py-2">

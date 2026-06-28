@@ -15,4 +15,6 @@ export const NAV_LINKS = [
   { id: "gallery", label: "Gallery" },
   { id: "rsvp", label: "RSVP" },
   { id: "events", label: "Events" },
+  { id: "dress-code", label: "Dress Code" },
+  { id: "gifts", label: "Gifts" },
 ] as const;
