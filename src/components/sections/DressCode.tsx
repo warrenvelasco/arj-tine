@@ -13,7 +13,10 @@ const PALETTE: Swatch[] = [
 
 export default function DressCode() {
   return (
-    <section id="dress-code" className="relative overflow-hidden bg-cream-deep py-24">
+    <section
+      id="dress-code"
+      className="relative overflow-hidden bg-cream-deep py-24"
+    >
       <Image
         src="/images/shape4.png"
         alt=""
@@ -27,8 +30,9 @@ export default function DressCode() {
 
         <p className="mx-auto mt-8 max-w-2xl text-center font-serif text-lg leading-relaxed text-foreground">
           For our dress code, we kindly ask that guests reserve wearing plain
-          white exclusively for the bride. Thank you for your understanding and
-          respect.
+          white exclusively for the bride.{" "}
+          <strong>Do not wear white on our special day.</strong> Thank you for
+          your understanding and respect.
         </p>
 
         {/* Guest attire inspiration alongside the palette */}
