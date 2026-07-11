@@ -12,7 +12,7 @@ type EventInfo = {
 const EVENTS: EventInfo[] = [
   {
     title: "The Ceremony",
-    time: "1:00 PM",
+    time: "12:30 PM",
     venue: "Our Lady of Peace and Good Voyage Parish",
     address: "Lodlod, Lipa City, Batangas",
     image: "/images/church.webp",
@@ -61,6 +61,16 @@ export default function Events() {
                   {event.venue}
                 </p>
                 <p className="mt-1 text-foreground">{event.address}</p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    `${event.venue}, ${event.address}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-block rounded-full border border-blue-dust px-6 py-2 text-sm uppercase tracking-[0.18em] text-blue-dust transition-colors hover:bg-blue-dust hover:text-white"
+                >
+                  Get Direction
+                </a>
               </div>
             </article>
           ))}
