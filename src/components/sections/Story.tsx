@@ -1,26 +1,40 @@
 import SectionTitle from "@/components/SectionTitle";
+import AutoplayVideo from "@/components/AutoplayVideo";
 
 type Milestone = {
   date: string;
   title: string;
   text: string;
+  media: {
+    type: "photo" | "video";
+    src: string;
+  };
 };
 
 const MILESTONES: Milestone[] = [
   {
-    date: "June 2019",
+    date: "2011",
     title: "How We Met",
-    text: "A rainy afternoon, a crowded coffee shop, and one shared umbrella. We talked until the cafe closed and knew this was the start of something special.",
+    media: { type: "photo", src: "" },
+    text: "Arj first noticed Tine during a jeepney ride back in high school and couldn't stop thinking about the pretty girl he had just seen. After finding out who she was through her cousin, he admired her from afar, convinced she was out of his league. (Tine says he was just too shy.) Fourteen years later, he finally made his move and asked if he could court her. The rest is their favorite love story.",
   },
   {
-    date: "February 2020",
+    date: "2020",
     title: "Our First Trip",
-    text: "Two backpacks and a map we never followed. Getting lost together turned out to be our favorite way to find each other.",
+    media: { type: "photo", src: "" },
+    text: "Their first trip together was an unplanned drive to Tagaytay on a rainy afternoon. Tine was supposed to head to the gym, but Arj surprised her by picking her up instead. They spent the afternoon over coffee, talking and enjoying the cool weather. Little did they know, that spontaneous trip would become the first of many. To this day, Tagaytay remains their favorite place for a date.	",
   },
   {
-    date: "December 2024",
+    date: "December 9, 2025",
     title: "The Proposal",
-    text: "Under a sky full of stars, with shaking hands and a full heart, the question was asked — and answered with happy tears and a resounding yes.",
+    media: { type: "video", src: "/video/proposal.mp4" },
+    text: "What started as a trip to Cebu quickly became one of the most unforgettable moments of their lives. Tine had no idea that Arj had been secretly planning a surprise all along. On one of Cebu's most breathtaking spots, a very nervous Arj got down on one knee and asked the easiest question of his life. She said yes—and the rest is forever.",
+  },
+  {
+    date: "2024 - Present",
+    title: "Miles Apart, Always Together",
+    media: { type: "video", src: "/video/travel-apart.mp4" },
+    text: "What started as a trip to Cebu quickly became one of the most unforgettable moments of their lives. Tine had no idea that Arj had been secretly planning a surprise all along. On one of Cebu's most breathtaking spots, a very nervous Arj got down on one knee and asked the easiest question of his life. She said yes—and the rest is forever.",
   },
 ];
 
@@ -42,7 +56,9 @@ export default function Story() {
             >
               <div
                 className={`md:w-1/2 ${
-                  i % 2 === 0 ? "md:order-1 md:pr-12 md:text-right" : "md:order-3 md:pl-12"
+                  i % 2 === 0
+                    ? "md:order-1 md:pr-12 md:text-right"
+                    : "md:order-3 md:pl-12"
                 }`}
               >
                 <div className="ml-12 md:ml-0">
@@ -68,11 +84,20 @@ export default function Story() {
                   i % 2 === 0 ? "md:order-3 md:pl-12" : "md:order-1 md:pr-12"
                 }`}
               >
-                <div className="ml-12 flex h-48 items-center justify-center overflow-hidden rounded-2xl bg-gray-300 md:ml-0">
-                  <span className="text-xs uppercase tracking-widest text-gray-500">
-                    Photo
-                  </span>
-                </div>
+                {m.media.type === "photo" ? (
+                  <div className="ml-12 flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl bg-gray-300 md:ml-0">
+                    <span className="text-xs uppercase tracking-widest text-gray-500">
+                      Photo · Landscape
+                    </span>
+                  </div>
+                ) : (
+                  <AutoplayVideo
+                    src={m.media.src}
+                    className={`ml-12 aspect-[9/16] max-w-full lg:max-w-[260px] rounded-2xl bg-gray-300 md:ml-0 ${
+                      i % 2 === 0 ? "" : "md:ml-auto"
+                    }`}
+                  />
+                )}
               </div>
             </li>
           ))}

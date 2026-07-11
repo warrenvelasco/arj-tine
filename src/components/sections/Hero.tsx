@@ -33,8 +33,7 @@ export default function Hero() {
         </p>
 
         <h1 className="mt-2 font-serif text-6xl font-medium tracking-wide text-white [text-shadow:0_3px_18px_rgba(0,0,0,0.6)] sm:text-7xl lg:text-8xl">
-          {"Arjay"} <span className="text-blue-dust">&amp;</span>{" "}
-          {WEDDING.bride}
+          {"Arj"} <span className="text-blue-dust">&amp;</span> {WEDDING.bride}
         </h1>
 
         <div className="mt-5 flex items-center gap-4 text-sm uppercase tracking-[0.22em] text-cream/90 [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">

@@ -79,13 +79,12 @@ export default function Gifts() {
 
         <div className="mt-14 flex flex-col items-center justify-center gap-12 sm:flex-row sm:gap-16">
           <Image
-            src="/images/gift2.png"
+            src="/images/qr-code.jpg"
             alt="A wedding gift wrapped with a sage ribbon and a 'To the Newlyweds' tag"
             width={1536}
             height={1024}
             className="h-auto w-full max-w-sm select-none rounded-2xl"
           />
-          <SampleQr />
         </div>
       </div>
     </section>

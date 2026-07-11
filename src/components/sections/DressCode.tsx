@@ -38,35 +38,12 @@ export default function DressCode() {
         {/* Guest attire inspiration alongside the palette */}
         <div className="mt-14 flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-14">
           <Image
-            src="/images/attire.png"
+            src="/images/dress-code.webp"
             alt="Guest attire inspiration — sage green dress and shirt"
             width={1536}
             height={1024}
             className="h-auto w-full max-w-md select-none rounded-2xl md:max-w-lg md:flex-1"
           />
-
-          {/* Colour palette */}
-          <div className="md:flex-shrink-0">
-            <p className="text-center text-xs uppercase tracking-[0.3em] text-muted md:text-left">
-              Our Sage Green Palette
-            </p>
-            <div className="mt-7 flex flex-wrap items-start justify-center gap-5 sm:gap-7 md:justify-start">
-              {PALETTE.map((swatch) => (
-                <div key={swatch.name} className="flex flex-col items-center">
-                  <span
-                    className="block h-32 w-12 rounded-full shadow-md ring-1 ring-black/5 sm:h-40 sm:w-14"
-                    style={{ backgroundColor: swatch.hex }}
-                  />
-                  <span className="mt-3 text-[11px] font-medium uppercase tracking-[0.12em] text-ink">
-                    {swatch.name}
-                  </span>
-                  <span className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-muted">
-                    {swatch.hex}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
