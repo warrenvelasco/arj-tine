@@ -118,16 +118,16 @@ export default function Entourage() {
           <h3 className="text-sm font-medium uppercase tracking-[0.24em] text-blue-dust">
             Life Godparents
           </h3>
-          <div className="mt-6 space-y-4 sm:space-y-2.5">
+          <div className="mt-6 space-y-3 sm:space-y-2.5">
             {GODPARENTS.map(([groomSide, brideSide]) => (
               <div
                 key={groomSide}
-                className="grid gap-0.5 sm:grid-cols-2 sm:gap-10"
+                className="grid grid-cols-2 gap-4 sm:gap-10"
               >
-                <p className="font-serif text-lg text-ink sm:text-right">
+                <p className="text-right font-serif text-base text-ink sm:text-lg">
                   {groomSide}
                 </p>
-                <p className="font-serif text-lg text-ink sm:text-left">
+                <p className="text-left font-serif text-base text-ink sm:text-lg">
                   {brideSide}
                 </p>
               </div>
