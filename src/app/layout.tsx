@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Great_Vibes, Jost } from "next/font/google";
+import {
+  Alex_Brush,
+  Cormorant_Garamond,
+  Great_Vibes,
+  Jost,
+} from "next/font/google";
 import "./globals.css";
 
 const greatVibes = Great_Vibes({
   variable: "--font-script",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const alexBrush = Alex_Brush({
+  variable: "--font-alex-brush",
   weight: "400",
   subsets: ["latin"],
 });
@@ -33,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${greatVibes.variable} ${cormorant.variable} ${jost.variable} h-full antialiased`}
+      className={`${greatVibes.variable} ${alexBrush.variable} ${cormorant.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

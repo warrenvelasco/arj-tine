@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const VIDEO_ID = "P4mskkInY_s";
@@ -198,7 +199,18 @@ export default function VideoBackground() {
 
   return (
     <div className="pointer-events-none absolute inset-0 z-0 min-h-svh overflow-hidden">
-      <div ref={containerRef} className="absolute inset-0 overflow-hidden" />
+      <Image
+        src="/images/bg-main.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[68%_50%] md:object-center"
+      />
+      {/* The YouTube player stays mounted (hidden) as the music source. */}
+      <div className="absolute inset-0 overflow-hidden opacity-0" aria-hidden="true">
+        <div ref={containerRef} className="absolute inset-0" />
+      </div>
       <div className="absolute inset-0 bg-linear-to-b from-black/55 via-black/40 to-black/65" />
 
       <button

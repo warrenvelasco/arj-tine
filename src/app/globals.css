@@ -23,6 +23,7 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --font-script: var(--font-script);
+  --font-brush: var(--font-alex-brush);
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 }

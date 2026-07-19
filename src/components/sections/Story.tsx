@@ -15,13 +15,13 @@ const MILESTONES: Milestone[] = [
   {
     date: "2011",
     title: "How We Met",
-    media: { type: "photo", src: "" },
+    media: { type: "photo", src: "/images/arjtine.png" },
     text: "Arj first noticed Tine during a jeepney ride back in high school and couldn't stop thinking about the pretty girl he had just seen. After finding out who she was through her cousin, he admired her from afar, convinced she was out of his league. (Tine says he was just too shy.) Fourteen years later, he finally made his move and asked if he could court her. The rest is their favorite love story.",
   },
   {
     date: "2020",
     title: "Our First Trip",
-    media: { type: "photo", src: "" },
+    media: { type: "photo", src: "/images/trip.png" },
     text: "Their first trip together was an unplanned drive to Tagaytay on a rainy afternoon. Tine was supposed to head to the gym, but Arj surprised her by picking her up instead. They spent the afternoon over coffee, talking and enjoying the cool weather. Little did they know, that spontaneous trip would become the first of many. To this day, Tagaytay remains their favorite place for a date.	",
   },
   {
@@ -85,10 +85,19 @@ export default function Story() {
                 }`}
               >
                 {m.media.type === "photo" ? (
-                  <div className="ml-12 flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl bg-gray-300 md:ml-0">
-                    <span className="text-xs uppercase tracking-widest text-gray-500">
-                      Photo · Landscape
-                    </span>
+                  <div className="ml-12 flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl border border-gray-300 bg-gray-300 md:ml-0 md:scale-[1.15]">
+                    {m.media.src ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={m.media.src}
+                        alt={m.title}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-xs uppercase tracking-widest text-gray-500">
+                        Photo · Landscape
+                      </span>
+                    )}
                   </div>
                 ) : (
                   <AutoplayVideo

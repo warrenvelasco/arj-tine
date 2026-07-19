@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Couple from "@/components/sections/Couple";
 import Story from "@/components/sections/Story";
 import Gallery from "@/components/sections/Gallery";
+import Entourage from "@/components/sections/Entourage";
 import Rsvp from "@/components/sections/Rsvp";
 import Events from "@/components/sections/Events";
 import DressCode from "@/components/sections/DressCode";
@@ -19,6 +20,7 @@ export default function Home() {
         {/* <Couple /> */}
         <Story />
         <Gallery />
+        <Entourage />
         <Rsvp />
         <Events />
         <DressCode />
