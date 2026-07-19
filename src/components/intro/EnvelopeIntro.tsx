@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { WEDDING } from "@/lib/wedding";
@@ -38,6 +38,14 @@ export default function EnvelopeIntro({
   reducedMotion = false,
 }: Props) {
   const [opening, setOpening] = useState(false);
+  // Seats reserved for this guest, from the `?guest=` URL parameter (default 1).
+  const [seats, setSeats] = useState(1);
+
+  useEffect(() => {
+    const raw = new URLSearchParams(window.location.search).get("guest");
+    const n = parseInt(raw ?? "", 10);
+    if (Number.isFinite(n) && n > 0 && n <= 5) setSeats(n);
+  }, []);
 
   const handleOpen = () => {
     if (opening) return;
@@ -251,17 +259,22 @@ export default function EnvelopeIntro({
       </button>
 
       {!opening && (
-        <motion.p
-          className="mt-12 text-xs uppercase tracking-[0.25em] text-muted"
-          animate={reducedMotion ? { y: 0 } : { y: [0, -5, 0] }}
-          transition={
-            reducedMotion
-              ? { duration: 0 }
-              : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
-          }
-        >
-          Tap to open the invitation
-        </motion.p>
+        <>
+          <motion.p
+            className="mt-12 text-xs uppercase tracking-[0.25em] text-muted"
+            animate={reducedMotion ? { y: 0 } : { y: [0, -5, 0] }}
+            transition={
+              reducedMotion
+                ? { duration: 0 }
+                : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
+            }
+          >
+            Tap to open the invitation
+          </motion.p>
+          <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-sage-deep">
+            Your reservation includes {seats} seat{seats > 1 ? "s" : ""}
+          </p>
+        </>
       )}
     </motion.div>
   );
