@@ -40,7 +40,7 @@ const MILESTONES: Milestone[] = [
 
 export default function Story() {
   return (
-    <section id="story" className="relative overflow-hidden bg-cream py-24">
+    <section id="story" className="relative overflow-hidden bg-cream py-16">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <SectionTitle subtitle="Our Journey" title="Our Love Story" />
 

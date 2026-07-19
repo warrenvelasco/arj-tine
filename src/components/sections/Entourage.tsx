@@ -75,7 +75,7 @@ function RoleBlock({ role, names }: RoleGroup) {
 
 export default function Entourage() {
   return (
-    <section id="entourage" className="relative overflow-hidden bg-cream py-24">
+    <section id="entourage" className="relative overflow-hidden bg-cream py-16">
       <Image
         src="/images/shape3.png"
         alt=""

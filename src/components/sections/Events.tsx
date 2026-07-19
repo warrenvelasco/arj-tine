@@ -28,7 +28,7 @@ const EVENTS: EventInfo[] = [
 
 export default function Events() {
   return (
-    <section id="events" className="relative overflow-hidden bg-cream py-24">
+    <section id="events" className="relative overflow-hidden bg-cream py-16">
       <Image
         src="/images/shape3.png"
         alt=""

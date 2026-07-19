@@ -59,7 +59,7 @@ function SampleQr() {
 
 export default function Gifts() {
   return (
-    <section id="gifts" className="relative overflow-hidden bg-cream py-24">
+    <section id="gifts" className="relative overflow-hidden bg-cream py-16">
       <Image
         src="/images/shape2.png"
         alt=""
