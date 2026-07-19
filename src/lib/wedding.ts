@@ -10,7 +10,7 @@ export const WEDDING = {
 
 export const NAV_LINKS = [
   { id: "home", label: "Home" },
-  { id: "couple", label: "Couple" },
+  // { id: "couple", label: "Couple" },
   { id: "story", label: "Story" },
   { id: "gallery", label: "Gallery" },
   { id: "entourage", label: "Entourage" },
