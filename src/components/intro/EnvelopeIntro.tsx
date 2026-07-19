@@ -222,7 +222,7 @@ export default function EnvelopeIntro({
           {/* Wax seal */}
           <motion.div
             className="absolute left-1/2 top-1/2"
-            style={{ marginLeft: -39, marginTop: -39, zIndex: 7 }}
+            style={{ marginLeft: -52, marginTop: -52, zIndex: 7 }}
             animate={
               opening
                 ? { scale: 1.5, opacity: 0 }
@@ -238,40 +238,14 @@ export default function EnvelopeIntro({
                   : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
             }
           >
-            {/* Wax blob — warm gold, lit from upper-left, organic edge */}
-            <div
-              className="flex h-[78px] w-[78px] items-center justify-center"
-              style={{
-                borderRadius: "47% 53% 51% 49% / 52% 48% 53% 47%",
-                background:
-                  "radial-gradient(circle at 35% 28%, rgba(255,250,234,0.6), rgba(255,250,234,0) 40%), radial-gradient(circle at 70% 76%, rgba(74,52,22,0.42), rgba(74,52,22,0) 52%), radial-gradient(circle at 48% 46%, #dabf82 0%, #c4a263 52%, #a37f48 100%)",
-                boxShadow:
-                  "inset 0 3px 4px rgba(255,250,232,0.5), inset 0 -5px 7px rgba(74,52,22,0.42), 0 7px 13px rgba(45,35,18,0.4), 0 2px 4px rgba(45,35,18,0.3)",
-              }}
-            >
-              {/* Engraved inner ring */}
-              <div
-                className="flex h-[60px] w-[60px] items-center justify-center"
-                style={{
-                  borderRadius: "50% 49% 51% 50% / 50% 51% 49% 50%",
-                  border: "1.5px solid rgba(96,70,32,0.32)",
-                  boxShadow:
-                    "inset 0 1px 2px rgba(74,52,22,0.5), inset 0 -1px 2px rgba(255,250,232,0.45)",
-                }}
-              >
-                <span
-                  className="font-serif text-[15px] font-semibold"
-                  style={{
-                    letterSpacing: "0.04em",
-                    color: "#6f5226",
-                    textShadow:
-                      "0 1px 0 rgba(255,250,232,0.4), 0 -0.5px 0 rgba(74,52,22,0.3)",
-                  }}
-                >
-                  {WEDDING.groom[0]} &amp; {WEDDING.bride[0]}
-                </span>
-              </div>
-            </div>
+            <Image
+              src="/images/seal.png"
+              alt=""
+              width={1024}
+              height={1024}
+              priority
+              className="h-[104px] w-[104px] select-none drop-shadow-[0_7px_13px_rgba(45,35,18,0.45)]"
+            />
           </motion.div>
         </div>
       </button>
