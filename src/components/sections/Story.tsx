@@ -34,7 +34,7 @@ const MILESTONES: Milestone[] = [
     date: "2024 - Present",
     title: "Miles Apart, Always Together",
     media: { type: "video", src: "/video/travel-apart.mp4" },
-    text: "What started as a trip to Cebu quickly became one of the most unforgettable moments of their lives. Tine had no idea that Arj had been secretly planning a surprise all along. On one of Cebu's most breathtaking spots, a very nervous Arj got down on one knee and asked the easiest question of his life. She said yes—and the rest is forever.",
+    text: "For now, love looks like packed suitcases, airport goodbyes, and counting down the days until the next reunion. Distance has never been easy, but every goodbye brings them one step closer to their forever. This is their \"now\"—not their future. Soon, there will be no more countdowns, just a lifetime together.",
   },
 ];
 

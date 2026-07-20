@@ -218,6 +218,12 @@ export default function Rsvp() {
         <Suspense fallback={null}>
           <RsvpForm />
         </Suspense>
+
+        <p className="mx-auto mt-6 max-w-md text-center text-sm text-foreground">
+          While we adore your little ones, we have chosen to make our wedding
+          an <span className="font-bold text-sage-deep">ADULTS-ONLY</span> celebration.
+          Thank you for your understanding and support 😇
+        </p>
       </div>
     </section>
   );
