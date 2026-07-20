@@ -32,7 +32,7 @@ export default function Hero() {
           We&apos;re getting married
         </p>
 
-        <h1 className="mt-2 font-brush text-6xl text-white [text-shadow:0_3px_18px_rgba(0,0,0,0.6)] sm:text-7xl lg:text-8xl">
+        <h1 className="mt-2 font-brush text-7xl text-white [text-shadow:0_3px_18px_rgba(0,0,0,0.6)] sm:text-7xl lg:text-[150px]">
           {"Arj"} <span className="text-yellow-200">&amp;</span> {WEDDING.bride}
         </h1>
 
@@ -42,14 +42,14 @@ export default function Hero() {
           <span className="h-px w-8 bg-cream/50" />
         </div>
 
-        <div className="relative mt-10">
+        {/* <div className="relative mt-10">
           <div
             className="bg-cover bg-top bg-no-repeat flex h-60 w-84 items-center justify-center overflow-hidden rounded-2xl bg-gray-300 sm:h-80 sm:w-104 shadow-2xl"
             style={{
               backgroundImage: `url(/images/main.jpg)`,
             }}
           ></div>
-        </div>
+        </div> */}
 
         <div className="mt-10">
           <Countdown date={WEDDING.date} tone="light" />
