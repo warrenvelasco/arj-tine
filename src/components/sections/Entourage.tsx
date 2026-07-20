@@ -11,7 +11,7 @@ const GODPARENTS: [string, string][] = [
   ["Mr. Hanz Othley Viola", "Mrs. Jean Karen Viola"],
   ["Mr. Kert Arsmel Fetalco", "Mrs. Mabeth Fetalco"],
   ["Mr. Christopher John Famadico", "Mrs. Angela Famadico"],
-  ["Mr. Maricel Pesa", "Mrs. Lester Pesa"],
+  ["Mr. Lester Pesa", "Mrs. Maricel Pesa"],
   ["Mr. Eric A. Africa", "Mrs. Ruzen M. Africa"],
   ["Mr. Maximo Macuha II", "Mrs. Lucia Macuha"],
   ["Mr. Joel Mosca", "Mrs. Leni Mosca"],
