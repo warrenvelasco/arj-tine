@@ -9,7 +9,7 @@ type RoleGroup = {
 // Godparent couples — groom's side listed first, bride's side second.
 const GODPARENTS: [string, string][] = [
   ["Mr. Hanz Othley Viola", "Mrs. Jean Karen Viola"],
-  ["Mr. Kert Arsmel Fetalco", "Mrs. Mabeth Fetalco"],
+  ["Mr. Kert Arsmel Fetalco", "Mrs. Ma. Elizabeth Fetalco"],
   ["Mr. Christopher John Famadico", "Mrs. Angela Famadico"],
   ["Mr. Lester Pesa", "Mrs. Maricel Pesa"],
   ["Mr. Eric A. Africa", "Mrs. Ruzen M. Africa"],
@@ -23,7 +23,7 @@ const GODPARENTS: [string, string][] = [
 
 const PARENTS: [RoleGroup, RoleGroup] = [
   { role: "Groom's Parent", names: ["Mr. Remegio E. Libera"] },
-  { role: "Bride's Parent", names: ["Mrs. Lina C. Lajara"] },
+  { role: "Bride's Parent", names: ["Mrs. Carolina C. Lajara"] },
 ];
 
 const PAIRED_ROLES: [RoleGroup, RoleGroup][] = [

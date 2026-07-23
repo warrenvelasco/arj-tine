@@ -19,7 +19,7 @@ const MILESTONES: Milestone[] = [
     text: "Arj first noticed Tine during a jeepney ride back in high school and couldn't stop thinking about the pretty girl he had just seen. After finding out who she was through her cousin, he admired her from afar, convinced she was out of his league. (Tine says he was just too shy.) Fourteen years later, he finally made his move and asked if he could court her. The rest is their favorite love story.",
   },
   {
-    date: "2020",
+    date: "2023",
     title: "Our First Trip",
     media: { type: "photo", src: "/images/trip.png" },
     text: "Their first trip together was an unplanned drive to Tagaytay on a rainy afternoon. Tine was supposed to head to the gym, but Arj surprised her by picking her up instead. They spent the afternoon over coffee, talking and enjoying the cool weather. Little did they know, that spontaneous trip would become the first of many. To this day, Tagaytay remains their favorite place for a date.	",

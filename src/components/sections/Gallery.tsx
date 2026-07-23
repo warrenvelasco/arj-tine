@@ -10,21 +10,23 @@ type GalleryItem = {
 };
 
 const GALLERY: GalleryItem[] = [
-  "DSC05128",
-  "DSC05343",
-  "DSC05510",
-  "DSC05652",
+  "DSC05207",
+  "DSC05218",
   "DSC05744",
-  "DSC05836",
-  "DSC05896",
-  "DSC05897",
-  "DSC05938",
+  "DSC05747",
+  "DSC05752",
+  "DSC05759",
+  "DSC05821",
+  "DSC05957",
+  "DSC05990",
   "DSC06005",
+  "DSC06007",
+  "DSC06041",
+  "DSC06054",
   "DSC06065",
   "DSC06071",
-  "DSC06147",
-  "DSC06168",
-  "DSC06221",
+  "DSC06121",
+  "DSC06268",
 ].map((name, i) => ({ id: i + 1, src: `/images/gallery/${name}.webp` }));
 
 const AUTO_ADVANCE_MS = 3500;
@@ -45,15 +47,15 @@ type SlidePosition = {
  * look); negative does the same for the right side.
  */
 const POSITIONS: Record<number, SlidePosition> = {
-  [-2]: { x: -104, rot: 42, scale: 0.78, opacity: 0.55, z: 10 },
-  [-1]: { x: -58, rot: 32, scale: 0.88, opacity: 0.8, z: 20 },
+  [-2]: { x: -160, rot: 42, scale: 0.78, opacity: 0.55, z: 10 },
+  [-1]: { x: -88, rot: 32, scale: 0.88, opacity: 0.8, z: 20 },
   [0]: { x: 0, rot: 0, scale: 1, opacity: 1, z: 30 },
-  [1]: { x: 58, rot: -32, scale: 0.88, opacity: 0.8, z: 20 },
-  [2]: { x: 104, rot: -42, scale: 0.78, opacity: 0.55, z: 10 },
+  [1]: { x: 88, rot: -32, scale: 0.88, opacity: 0.8, z: 20 },
+  [2]: { x: 160, rot: -42, scale: 0.78, opacity: 0.55, z: 10 },
 };
 
-const HIDDEN_LEFT: SlidePosition = { x: -150, rot: 45, scale: 0.7, opacity: 0, z: 0 };
-const HIDDEN_RIGHT: SlidePosition = { x: 150, rot: -45, scale: 0.7, opacity: 0, z: 0 };
+const HIDDEN_LEFT: SlidePosition = { x: -230, rot: 45, scale: 0.7, opacity: 0, z: 0 };
+const HIDDEN_RIGHT: SlidePosition = { x: 230, rot: -45, scale: 0.7, opacity: 0, z: 0 };
 
 /** Shortest signed distance from the active slide, wrapping around. */
 function slideOffset(index: number, active: number, count: number) {
@@ -142,7 +144,7 @@ export default function Gallery() {
           onMouseLeave={() => setPaused(false)}
         >
           <div
-            className={`relative h-56 touch-pan-y select-none sm:h-80 lg:h-104 ${
+            className={`relative h-96 touch-pan-y select-none sm:h-[30rem] lg:h-[36rem] ${
               dragging ? "cursor-grabbing" : "cursor-grab transition-transform duration-300"
             }`}
             style={{
@@ -171,7 +173,7 @@ export default function Gallery() {
                   aria-label={
                     isActive ? `Open photo ${item.id}` : `Show photo ${item.id}`
                   }
-                  className="absolute left-1/2 top-1/2 aspect-[3/2] h-[88%] overflow-hidden rounded-2xl bg-gray-300 shadow-xl ring-1 ring-black/5 transition-all duration-700 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep"
+                  className="absolute left-1/2 top-1/2 aspect-[2/3] h-[88%] overflow-hidden rounded-2xl bg-gray-300 shadow-xl ring-1 ring-black/5 transition-all duration-700 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep"
                   style={{
                     transform: `translate(-50%, -50%) translateX(${pos.x}%) rotateY(${pos.rot}deg) scale(${pos.scale})`,
                     opacity: pos.opacity,
